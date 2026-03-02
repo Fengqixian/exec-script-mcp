@@ -1,0 +1,39 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+.env
+.venv
+env/
+venv/
+.eggs
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Node.js - 在构建时重新安装
+node_modules/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 运行时生成的文件
+executions/
+
+# 文档
+*.md
+!README.md
+
+# 其他
+.DS_Store
+Thumbs.db
+*.log

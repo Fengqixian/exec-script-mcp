@@ -1,0 +1,18 @@
+services:
+  script-executor:
+    build: .
+    container_name: mcp-script-executor
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      # 可选：持久化执行目录（保留执行历史和生成的文件）
+      - ./executions:/app/executions
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/mcp"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
